@@ -1,5 +1,77 @@
-h1 {
-    font: large;
-    font font-family: 'Gill Sans';
-    color: aqua;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
 }
+.about
+{ 
+    width: 100%;
+    background-color: #EEA47F ;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about .main img{
+    height: auto;
+    width: 600px;
+    max-width: 100%;
+}
+.about-text {
+    width: 550px;
+    max-width: 100%;
+    padding: 0 10px;
+}
+.main {
+    width: 1280px;
+    max-width: 95%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.about-text h1 {
+    color: #00539C;
+    font-size: 85px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+.about-text h5 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 25px;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+.about-text p {
+    color: white;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 45px;
+}
+button {
+    background-color: white;
+    color: black;
+    border: 2px solid transparent;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+}
+button:hover {
+    transform: scale (1.2);
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+    transition: .4s;
+    cursor: pointer;
+}
+
+
+
+
+
