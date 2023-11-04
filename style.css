@@ -7,7 +7,7 @@
 .about
 { 
     width: 100%;
-    background-color: #EEA47F ;
+    background-color: #649496 ;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -33,7 +33,7 @@
     justify-content: space-around;
 }
 .about-text h1 {
-    color: #00539C;
+    color: white;
     font-size: 85px;
     margin-bottom: 20px;
     text-transform: capitalize;
