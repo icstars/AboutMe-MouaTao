@@ -1,0 +1,304 @@
+// VARIABLES = container for data to be used
+// for later
+
+// let = are mutuable / change
+let number = 15
+number = 10 
+console.log(number)
+
+// const = immutable / cannot change
+const name = "Collin"
+// name = "Vince"
+
+// var = similar to 'let'
+var number2 = 0 
+number2 = 10 
+
+// DATA TYPES
+
+// Number
+let x = 2
+let y = 2.5
+let z = x + y 
+let b = 1000
+console.log(2**4)
+
+// Strings = sequence of characters
+// '' OR " " OR ` `
+const name2 = `Good Morning 
+My Friend`
+console.log(name2)
+
+// Concatenation = adding 2 strings together
+let sentence = 'Hello'
+let sentence2 = 'Goodbye'
+let sentence3 = sentence + ' ' + sentence2
+let sentence4 = `Hi my name is Tao. ${sentence2}`
+// ${} = template literal
+console.log(sentence4)
+
+let o = 200
+let s = `${o}`
+let num = '20000' // This is a string because it is in ''
+let num2 = 20 // This is a number 
+console.log(num + num2) // answer is 2000020 because it is not the same data type
+const num3 = 10
+console.log(num3)
+
+// Booleans = true or false values
+
+// Truthy = anything with value
+// 1
+// 'Great' (string with value)
+// True
+
+
+// Falsie = undefined; no value
+// 0
+// '' (string  with NO value)
+// False
+// Undefined
+// Null
+
+console.log(Boolean("false")) // true bc it's in a string
+
+// what is an array
+
+const emptyArr = []
+console.log(emptyArr)
+const lengthOfEmptyArray = emptyArr.length
+console.log(lengthOfEmptyArray)
+
+const mixArr = [1, 'Collin']
+console.log(mixArr)
+
+const nameArr = ["Lucycan", "Collin", "Mark"]
+console.log(nameArr)
+const lengthOfNameArr = nameArr.length
+console.log(lengthOfNameArr)
+
+// indexing an array
+const hello = `Hi my name is ${nameArr[1]}`
+console.log(hello)
+console.log(nameArr[1])
+
+// pushing (to add into an array)
+nameArr.push("Cortez")
+console.log(nameArr)
+nameArr.push("ME")
+console.log(nameArr)
+
+// pop (to delete from an array)
+console.log(nameArr.pop())
+console.log(nameArr)
+
+
+// how to index last element of an array
+const oneTwoThree = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' ]
+console.log(oneTwoThree)
+const FourFiveSix = oneTwoThree[oneTwoThree.length -1]
+console.log(FourFiveSix)
+
+// ------------------------------------------------------------- //
+
+// review 11/23/23
+let numberr1 = 'Collin'
+let numberr2 = 1
+let numberr3 = numberr1 + numberr2
+console.log(numberr3)
+
+namename1 = 'Collin'
+ageage = 22
+let sentsent = `Hi my name is ${namename1} and I am ${ageage}`
+console.log(sentsent)
+
+// ------------------------------------------------------------ //
+
+// review 11/13/23
+const arrr = [2, 1, 7, 10, 5, 3]
+console.log(arrr[2])
+const arrr2 = arrr[arrr.length - 1]
+console.log(arrr2)
+
+// ------------------------------------------------------------ //
+
+// Splice 
+let aray = [1,2,3,4,5]
+let lastItem = aray.slice(-1)
+let numnum = lastItem.slice(0)
+numnum = 9 
+console.log(aray, numnum)
+
+
+// ------------------------------------------------------------ //
+yes = [5,6,2,9]
+yes[1] = 10
+// changes the value "6" from the posotion 1 into 
+// "10"
+console.log(yes)
+
+// ------------------------------------------------------------ //
+
+// push & pop
+yes.push(91231230)
+console.log(yes)
+yes.pop()
+console.log(yes)
+
+// ------------------------------------------------------------ //
+
+// math functions
+console.log(Math.random() * yes.length)
+
+console.log(yes[(Math.random() * yes.length)])
+// ^^^ is undefined. math.floor rounds it down so it
+// can console log
+
+console.log(yes[Math.floor(Math.random() * yes.length)])
+
+// ------------------------------------------------------------ //
+
+let arrayy = [3,6,9,12,15,18,21]
+let randomNum = Math.random() * arrayy.length
+console.log(randomNum)
+console.log(arrayy[Math.floor(randomNum)])
+// Cleaner way to do it 
+let randomNum2 = Math.floor(randomNum)
+console.log(arrayy[randomNum2])
+
+// ------------------------------------------------------------ //
+
+// split(): splits a string by the specific 
+// character
+let str = 'caollian'
+console.log(str.split('a'))
+
+// join (): joins array elements between a 
+// specific character
+let ar = ['c', 'o', 'l', 'l', 'i','n']
+console.log(ar.join('a'))
+
+// ------------------------------------------------------------ //
+
+// FOR LOOPS 
+// It repeats a task or code a certain amount of
+// times based on a condition  
+
+// "i = 0" means the initilizer starts at 0. 
+// "i < x.length" means that until i
+// hits 5, 
+// "i++" will continue to cycle through the array
+
+// EXAMPLE OF "+=":
+// let num = 5 
+// num += 2 --> 7
+// num += 2 --> 9 
+// "+=" pretty much means num = num + 2
+
+// i++ = iterater
+
+// Traditional //
+
+let arar = ['yes',2,3,4,5,6,7,8,9]
+for (let i = 0; i < arar.length; i++) 
+{
+console.log(i)
+}
+// ^^^ Does not print the actual value
+// of the element, only the position
+
+let arrarr = ['yes', 'no', 'maybe'] 
+for (let eyes = 0; eyes < arrarr.length; eyes++) 
+{
+console.log(arrarr[eyes])
+}
+// ^^^ DOES print the element
+
+
+// FOR OF LOOP
+
+for (char of arrarr )
+{
+console.log(char)
+}
+// ^^^ FASTER and CLEANER then the other one
+// the "of" will help iterate your elements
+// instead of doing []
+
+
+// WHILE LOOP
+
+// let j = 0
+// while (j < 5)
+// {
+// console.log(j)
+// j++ 
+// put at the bottom so the position 
+// starts with 0 instead of 1 
+// }
+
+let index = 0 
+const homeworkArr = ['abc', 'def', 'hij', 'klm', 'nop']  
+while (index < homeworkArr.length)
+{
+    console.log(homeworkArr[index])
+    index++
+}
+
+
+------------------------------------------------------------------------------
+if (game = true) // change to WHILE when finished
+{
+    if (userinput1 === 'rock', 'scissors', 'paper')
+        {
+            console.log('You have chosen ' + userinput1)
+        }
+    if (userinput2 === 'rock', 'scissors', 'paper')
+        {
+            console.log('You have chosen ' + userinput2)
+        } 
+
+
+
+    if (userinput1 === 'rock' && userinput2 === 'rock')
+        {
+            console.log(' tie')
+        }   
+    if (userinput1 === 'rock' && userinput2 === 'paper') 
+        {
+            console.log(userinput2 + ' wins')
+        }
+    if (userinput1 === 'rock' && userinput2 === 'scissors')
+        {
+            console.log(userinput1 + ' wins')
+        }
+  
+
+    if (userinput1 === 'paper' && userinput2 === 'rock')
+        {
+            console.log(userinput1 + ' wins')
+        }
+    if (userinput1 === 'paper' && userinput2 === 'paper')
+        {
+            console.log(' tie')
+        }
+    if (userinput1 === 'paper' && userinput2 === 'scissors')
+        {
+            console.log(userinput2 + ' wins')
+        }
+
+    if (userinput1 === 'scissors' && userinput2 === 'rock')
+        {
+            console.log(userinput2 + ' wins')
+        }
+    if (userinput1 === 'scissors' && userinput2 === 'paper')
+        {
+            console.log(userinput1 + ' wins')
+        }
+    if (userinput1 === 'scissors' && userinput2 === 'scissors')
+        {
+            console.log(' tie')
+        }
+    
+    }
+--------------------------------------------------------------------------
