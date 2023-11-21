@@ -82,36 +82,74 @@
             
 // }
 
-let playerOneScore = 0
-let playerTwoScore = 0
-while (playerOneScore < 3 && playerTwoScore < 3) {
-    const playerOneChoice = prompt('Player 1: Rock, paper, or scissors')
-    const playerTwoChoice = prompt('Player 2: Rock, paper, or scissors')
-    // User Inputs
-    const choices = ['rock', 'paper', 'scissors', 'rock ', 'paper ', 'scissors ']
-    if (!choices.includes(playerOneChoice) || !choices.includes(playerTwoChoice)){
-        console.log('Invalid try. Wrong input.')
-        continue
-    }
+function playRockPaperScissors() {
+    let playerOneScore = 0;
+    let playerTwoScore = 0;
 
-    const p1 = playerOneChoice
-    const p2 = playerTwoChoice
+    while (playerOneScore < 3 && playerTwoScore < 3) {
+        const playerOneChoice = prompt('Player 1: Rock, paper, or scissors');
+        const playerTwoChoice = prompt('Player 2: Rock, paper, or scissors');
+        
+        const choices = ['rock', 'paper', 'scissors', 'rock ', 'paper ', 'scissors '];
 
-    // Declaring the winner
-    if (
-        (p1 === 'rock' && p2 === 'scissors') || 
-        (p1 === 'paper' && p2 === 'rock') || 
-        (p1 === 'scissors' && p2 === 'paper')
-    ) {
-        playerOneScore++
-        console.log(`Player 1 wins this round with ${p1} against ${p2}`)
-    } else if (p1 === p2) {
-        console.log('Tie')
-    } else {
-        playerTwoScore++ 
-        console.log(`Player 2 wins this round with ${p2} againts ${p1}`)
+        if (!choices.includes(playerOneChoice) || !choices.includes(playerTwoChoice)) {
+            console.log('Invalid try. Wrong input.');
+            continue;
+        }
+
+        const p1 = playerOneChoice;
+        const p2 = playerTwoChoice;
+
+        if (
+            (p1 === 'rock' && p2 === 'scissors') ||
+            (p1 === 'paper' && p2 === 'rock') ||
+            (p1 === 'scissors' && p2 === 'paper')
+        ) {
+            playerOneScore++;
+            console.log(`Player 1 wins this round with ${p1} against ${p2}`);
+        } else if (p1 === p2) {
+            console.log('Tie');
+        } else {
+            playerTwoScore++;
+            console.log(`Player 2 wins this round with ${p2} againts ${p1}`);
+        }
     }
 }
+
+// Call the function to start the game
+playRockPaperScissors();
+
+
+// let playerOneScore = 0
+// let playerTwoScore = 0
+// while (playerOneScore < 3 && playerTwoScore < 3) {
+//     const playerOneChoice = prompt('Player 1: Rock, paper, or scissors')
+//     const playerTwoChoice = prompt('Player 2: Rock, paper, or scissors')
+//     // User Inputs
+//     const choices = ['rock', 'paper', 'scissors', 'rock ', 'paper ', 'scissors ']
+//     if (!choices.includes(playerOneChoice) || !choices.includes(playerTwoChoice)){
+//         console.log('Invalid try. Wrong input.')
+//         continue
+//     }
+
+//     const p1 = playerOneChoice
+//     const p2 = playerTwoChoice
+
+//     // Declaring the winner
+//     if (
+//         (p1 === 'rock' && p2 === 'scissors') || 
+//         (p1 === 'paper' && p2 === 'rock') || 
+//         (p1 === 'scissors' && p2 === 'paper')
+//     ) {
+//         playerOneScore++
+//         console.log(`Player 1 wins this round with ${p1} against ${p2}`)
+//     } else if (p1 === p2) {
+//         console.log('Tie')
+//     } else {
+//         playerTwoScore++ 
+//         console.log(`Player 2 wins this round with ${p2} againts ${p1}`)
+//     }
+// }
 
 // Determining the winner
 // if (playerOneScore === 3){
@@ -121,17 +159,17 @@ while (playerOneScore < 3 && playerTwoScore < 3) {
 // }
 
 
-let playerScores = function(playerOneScore, playerTwoScore){
-    if (playerOneScore === 3){
-        // console.log('Player 1 wins the game!')
-        return 'Player 1 wins the game!'
-    }  
-    
+function announceWinner(playerOneScore, playerTwoScore) {
+    if (playerOneScore === 3) {
+        return('Player 1 wins the game!');
+    }
     if (playerTwoScore === 3){
-        // console.log('Player 2 wins the game!')
-        return 'Player 2 wins the game!'
+        return('Player 2 wins the game!')
     }
 }
+// Example usage:
+// Call this function after the game loop to determine and announce the winner
+announceWinner(playerOneScore, playerTwoScore);
 
 
 
