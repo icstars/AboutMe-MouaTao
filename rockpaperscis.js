@@ -165,7 +165,44 @@ let playerScores = function(playerOneScore, playerTwoScore){
         return 'Player 2 wins the game!'
     }
 }
-// testing
+
+
+// playerOne and playerTwo scores are not block scoped variables because the function determineWinner is being called in the function playRockPapperScissors 
+// aka Variable Scoping
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
