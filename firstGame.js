@@ -4,7 +4,7 @@ let arr = [
     [0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0]
-];
+]
 
 let playerX = 2
 let playerY = 3
@@ -15,7 +15,6 @@ let coinColumn = 0
 
 function render() {
     console.clear()
-
     // Reset the entire array to 0
     for (var row = 0; row < arr.length; row++) {
         for (var column = 0; column < arr[row].length; column++) {
@@ -30,7 +29,7 @@ function render() {
     arr[coinRow][coinColumn] = '1'
 
     // Display the updated array
-    console.table(arr);
+    console.table(arr)
 }
 
 function placeCoin() {
@@ -75,6 +74,7 @@ window.addEventListener("keydown", function (e) {
     // Check if 'X' collected the '1'
     if (playerY === coinRow && playerX === coinColumn) {
         score++
-        placeCoin(); // Place the '1' in a new random position
+        placeCoin() // Place the '1' in a new random position
     }
+    console.table('Score:', score)
 })
