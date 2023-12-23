@@ -20,7 +20,7 @@ if (userChoice > number){
     console.log(`You attempted ${attempt} times.`)
         }
     }
-    if (attempt >= 6){
+    if (attempt > 6){
         console.log(`But you lost. You were supposed to guess it in 6 tries, but you did it in ${attempt} tries.`)
     }
 }
@@ -35,6 +35,5 @@ if (playAgain.toLowerCase() == 'yes') {
         console.log('Invalid')
     }
 }
-
 playGame()
 DoYouWantToPlayAgain()
