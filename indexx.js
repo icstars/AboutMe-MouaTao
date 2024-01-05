@@ -26,3 +26,42 @@ console.log(grabSubmitBtn)
 
 const grabParagraph = document.getElementById('paragraph')
 console.log(grabParagraph)
+
+
+
+
+// -----------------------------------------------------------------
+
+// Constructor Function
+function Person(firstName, lastName, hobbies){
+    this.firstName = firstName,
+    this.lastName = lastName,
+    this.hobbies = hobbies
+}
+
+
+
+
+
+const grabForm = document.getElementById('mainForm')
+grabForm.addEventListener("submit", (e) =>  {
+    e.preventDefault()
+    console.log('Test')
+    const formData = new FormData(grabForm)
+
+    const firstNamee = formData.get("nameName")
+    console.log(firstNamee)
+
+    const lastNamee = formData.get("nameHobby")
+    console.log(lastNamee)
+
+    const newPerson = new Person(firstNamee, lastNamee)
+    console.log(newPerson)
+
+    peopleArrayOfObjects = []
+
+    peopleArrayOfObjects.push(newPerson)
+    console.log(peopleArrayOfObjects)
+})
+
+
