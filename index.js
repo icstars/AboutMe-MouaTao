@@ -158,6 +158,14 @@ console.log(vendingMachine("$2.00", "Cheetos"))
 
 
 
+let wrongInput = function(playerOneChoice, playerTwoChoice){
+    if (!choices.includes(playerOneChoice) || !choices.includes(playerTwoChoice)){
+        console.log('Invalid try. Wrong input.')
+        // continue
+    }
+}
+
+
 
 
 

@@ -63,3 +63,43 @@ button:hover {
     transition: .4s;
     cursor: pointer;
 }
+
+ /* ---------------------------------------------------------------------------------- // */
+
+input[type="text"] ,
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px; 
+  border: 1px solid #ffffff;
+  border-radius: 5px 
+}
+
+
+input[type="submit"] /* This directly references the "Submit" portion */ {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
+#paragraph {
+  font-style: italic;
+  margin-top: 10px;
+}
+
+
+
+#mainForm{ /* Changes the Text Colors For mainForm (First Name, Last Name) */
+    margin-top: 25px;
+    color:rgb(255, 255, 255);
+    font-family: 'Josefin Sans', sans-serif;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+  

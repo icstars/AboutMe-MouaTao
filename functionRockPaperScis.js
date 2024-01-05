@@ -7,14 +7,14 @@ let determineWinner = function (playerOneScore, playerTwoScore) {
         return 'No winner yet.'
     }
 }
-
-let playRockPaperScissors = function () { // No parameters because of function logic using playerOneScore and playerTwoScore since the game relies on these variables to end the game.
+  
+let playRockPaperScissors = function () { 
     let playerOneScore = 0
     let playerTwoScore = 0
     
     while (playerOneScore < 3 && playerTwoScore < 3) {
-        const playerOneChoice = prompt('Player 1: Rock, paper, or scissors')
-        const playerTwoChoice = prompt('Player 2: Rock, paper, or scissors')
+        let playerOneChoice = prompt('Player 1: Rock, paper, or scissors').toLowerCase()
+        let playerTwoChoice = prompt('Player 2: Rock, paper, or scissors').toLowerCase()
         
         const choices = ['rock', 'paper', 'scissors', 'rock ', 'paper ', 'scissors ']
         
