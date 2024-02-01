@@ -1,0 +1,363 @@
+HTML PAGE
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planetary Responsilbities</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <section class="gift">
+    <h2>Gifts</h2>
+    <ul>
+        <li>Knowledge</li>
+        <li>Empathy</li>
+        <li>Experience</li>
+        <li>Skills</li>
+        <li>Curiosity</li>
+    </ul>
+</section>
+
+<section class="gift-description">
+    <h2>Knowledge</h2>
+    <p>Critical Thinking</p>
+    <p>Problem Solving</p>
+</section>
+
+<section class="gift-description">
+    <h2>Empathy</h2>
+    <p>Emotional Awareness</p>
+    <p>Patience</p>
+</section>
+
+<section class="gift-description">
+    <h2>Experience</h2>
+    <p>Adaptability</p>
+    <p>Learning</p>
+</section>
+
+<section class="gift-description">
+    <h2>Skills</h2>
+    <p>Versatility</p>
+    <p>Proficiency</p>
+</section>
+    
+<section class="gift-description">
+    <h2>Curiousity</h2>
+    <p>Continous Learning</p>
+    <p>Self Reflection</p>
+</section>
+
+<script src="homework.js"></script>
+</body>
+
+</html>
+<body> -->
+
+--------------------------------------------------------------------------
+
+CSS PAGE
+<!-- body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+  
+  section {
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #007bff;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  li:hover {
+    background-color: #f4f4f4;
+  }
+  
+  .gift-description {
+    display: none;
+  }
+  
+  .gift-description h2 {
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .gift-description p {
+    color: #333;
+  } -->
+
+  --------------------------------------------------------------------------
+
+  JavaScript
+  <!-- document.addEventListener('DOMContentLoaded', function () {
+    const giftItems = document.querySelectorAll('.gift li');
+    const descriptions = document.querySelectorAll('.gift-description');
+  
+    giftItems.forEach((item, index) => {
+        item.addEventListener('click', function () {
+            const giftName = item.textContent.toLowerCase();
+            showGiftDescription(index);
+        });
+    });
+  
+    function showGiftDescription(index) {
+        // Hide all descriptions
+        descriptions.forEach(description => {
+            description.style.display = 'none';
+        });
+  
+        // Show the selected description
+        descriptions[index].style.display = 'block';
+    }
+  });
+   -->
+
+   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+--------------------------------------------------------------------------------------------------------------------
+JSSSS
+document.addEventListener('DOMContentLoaded', function () {
+  const giftItems = document.querySelectorAll('.gift li');
+  const descriptions = document.querySelectorAll('.gift-description');
+  const bottomContainer = document.querySelector('.bottom-container');
+
+  giftItems.forEach((item, index) => {
+    item.addEventListener('click', function () {
+      showGiftDescription(index);
+    });
+  });
+
+  // Add click event listener to the .gift-description sections
+  descriptions.forEach((description, index) => {
+    description.addEventListener('click', function (event) {
+      if (event.target.tagName === 'LI') {
+        const selectedSubGift = event.target.textContent;
+        displaySubGiftMessage(index, selectedSubGift);
+      }
+    });
+  });
+
+  function showGiftDescription(index) {
+    // Hide all descriptions
+    descriptions.forEach(description => {
+      description.style.display = 'none';
+    });
+
+    // Show the selected description
+    descriptions[index].style.display = 'block';
+  }
+
+  function displaySubGiftMessage(giftIndex, subGift) {
+    const messages = {
+      'Knowledge': {
+        'Critical Thinking': '1) Work Hard: Continue to work hard to hone my strength in critical thinking. 2) Enjoy Life',
+        'Problem Solving': 'Test 1'
+      },
+      'Empathy': {
+        'Emotional Awareness': 'Test 2',
+        'Patience': 'Test 3'
+      },
+      'Experience': {
+        'Adaptability': 'Test 4',
+        'Learning': 'Test 5'
+      },
+      'Skills': {
+        'Versatility': 'Test 6',
+        'Proficiency': 'Test 7'
+      },
+      'Curiosity': {
+        'Continuous Learning': 'Test 8',
+        'Self Reflection': 'Test 9'
+      }
+    };
+
+    const selectedMessage = messages[giftItems[giftIndex].textContent][subGift];
+
+    if (selectedMessage !== undefined) {
+      // Create a new message container
+      const messageContainer = document.createElement('div');
+      messageContainer.className = 'message-container';
+      messageContainer.textContent = selectedMessage;
+
+      // Remove any existing messages
+      bottomContainer.innerHTML = '';
+
+      // Append the new message container to the bottom
+      bottomContainer.appendChild(messageContainer);
+    }
+  }
+});
+
+
+HTML
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planetary Responsibilities</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <section class="gift">
+    <h2>Gifts</h2>
+    <ul>
+      <li>Knowledge</li>
+      <li>Empathy</li>
+      <li>Experience</li>
+      <li>Skills</li>
+      <li>Curiosity</li>
+    </ul>
+  </section>
+
+  <section class="gift-description" data-gift="Knowledge">
+    <h2>Knowledge</h2>
+    <ul>
+      <li>Critical Thinking</li>
+      <li>Problem Solving</li>
+    </ul>
+  </section>
+
+  <section class="gift-description" data-gift="Empathy">
+    <h2>Empathy</h2>
+    <ul>
+      <li>Emotional Awareness</li>
+      <li>Patience</li>
+    </ul>
+  </section>
+
+  <section class="gift-description" data-gift="Experience">
+    <h2>Experience</h2>
+    <ul>
+      <li>Adaptability</li>
+      <li>Learning</li>
+    </ul>
+  </section>
+
+  <section class="gift-description" data-gift="Skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Versatility</li>
+      <li>Proficiency</li>
+    </ul>
+  </section>
+      
+  <section class="gift-description" data-gift="Curiosity">
+    <h2>Curiosity</h2>
+    <ul>
+      <li>Continuous Learning</li>
+      <li>Self Reflection</li>
+    </ul>
+  </section>
+  <div class="bottom-container"></div>
+  
+
+
+  <script src="homework.js"></script>
+</body>
+</html> -->
+
+css
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the body takes at least the height of the viewport */
+}
+
+header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+section, .bottom-container {
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+  padding: 20px;
+}
+
+h2 {
+  color: #007bff;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+li {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+li:hover {
+  background-color: #f4f4f4;
+}
+
+.gift-description {
+  display: none;
+}
+
+.gift-description h2 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.gift-description p {
+  color: #333;
+}
+
+.bottom-container {
+  background-color: white;
+  padding: 20px;
+  margin-top: auto; /* Push to the bottom */
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
