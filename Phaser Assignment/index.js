@@ -21,6 +21,7 @@ const config = {
   
   let tiles = []
   let player;
+  let enemyBall;
 
 
   function preload(){
@@ -41,12 +42,21 @@ const config = {
     keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
     keyW = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W);
     
-  this.anims.create({
-    key:"enemyBall",
-    frames: this.anims.generateFrameNumbers("ball", {start: 0, end: 3}),
-    frameRate: 10,
-    repeat: -1
-  })
+  //   this.anims.create({
+  //     key: "enemyBall",
+  //     frames: this.anims.generateFrameNumbers("ball", { start: 0, end: 3 }),
+  //     frameRate: 10,
+  //     repeat: -1
+  // });
+  
+  
+
+  enemyBall = this.physics.add.sprite(500, 100, "ball");
+  enemyBall.anims.play("enemyBall");
+  enemyBall.setCollideWorldBounds(true);
+  enemyBall.setVelocity(200, 200); // Initial velocity for bouncing
+  enemyBall.setBounce(1, 1); // Enable bouncing
+
     this.anims.create({
       key: "playerIdle",
       frames: this.anims.generateFrameNumbers("idle", { start: 0, end: 3 }),
